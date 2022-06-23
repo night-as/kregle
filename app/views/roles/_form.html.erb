@@ -1,0 +1,37 @@
+<%= form_with(model: role) do |form| %>
+  <% if role.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(role.errors.count, "error") %> prohibited this role from being saved:</h2>
+
+      <ul>
+        <% role.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :login, style: "display: block" %>
+    <%= form.text_field :login %>
+  </div>
+
+  <div>
+    <%= form.label :is_admin, style: "display: block" %>
+    <%= form.check_box :is_admin %>
+  </div>
+
+  <div>
+    <%= form.label :is_worker, style: "display: block" %>
+    <%= form.check_box :is_worker %>
+  </div>
+
+  <div>
+    <%= form.label :is_client, style: "display: block" %>
+    <%= form.check_box :is_client %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

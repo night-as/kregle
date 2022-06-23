@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @bowling_ball %>
+
+<div>
+  <%= link_to "Edit this bowling ball", edit_bowling_ball_path(@bowling_ball) %> |
+  <%= link_to "Back to bowling balls", bowling_balls_path %>
+
+  <%= button_to "Destroy this bowling ball", @bowling_ball, method: :delete %>
+</div>

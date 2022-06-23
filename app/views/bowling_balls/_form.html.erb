@@ -1,0 +1,27 @@
+<%= form_with(model: bowling_ball) do |form| %>
+  <% if bowling_ball.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(bowling_ball.errors.count, "error") %> prohibited this bowling_ball from being saved:</h2>
+
+      <ul>
+        <% bowling_ball.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :is_avalable, style: "display: block" %>
+    <%= form.check_box :is_avalable %>
+  </div>
+
+  <div>
+    <%= form.label :size, style: "display: block" %>
+    <%= form.number_field :size %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
